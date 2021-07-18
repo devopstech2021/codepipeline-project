@@ -5,7 +5,7 @@
  *
  * @package WordPress
  */
-echo "devops wordpress project deployed with jenkins & github"
+phpinfo();
 exit;
 /**
  * Tells WordPress to load the WordPress theme and output it.
