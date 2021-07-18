@@ -1,19 +1,19 @@
 version: 0.0
 os: linux
 files:
-  - source: "/"
-    destination: "/tmp/deploy/"
+- source: "/"
+destination: "/tmp/deploy/"
 hooks:
-  BeforeInstall:
-    - location: scripts/before.sh
-      timeout: 60
-      runas: root
-  AfterInstall:
-    - location: scripts/after.sh
-      timeout: 60
-      runas: root
-  ValidationService:
-    - location: scripts/validate.sh
-      timeout: 60
-      runas: root
+BeforeInstall:
+- location: scripts/before.sh
+timeout: 60
+runas: root
+AfterInstall:
+- location: scripts/after.sh
+timeout: 60
+runas: root
+ValidationService:
+- location: scripts/validate.sh
+timeout: 60
+runas: root
 	  
