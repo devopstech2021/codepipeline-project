@@ -1,10 +1,14 @@
-#!/usr/bin/env bash
-sleep 10
+#!/bin/bash
+sleep 2
 
-nc -zv 127.0.0.1 80
+if [ "$DEPLOYMENT_GROUP_NAME" == " growexx-devops-deploy" ]; then
 
-if [ $? -eq 0 ]; then
-	echo "Service started successfully"
+result=$(curl -sL -w "%{http_code}\\n" "https://test.growexx.com/" -o /dev/null)
+fi
+
+if [ "$result" = "200" ]; then
+exit 0
+
 else
-	echo "service failed to start"
+ echo "Deployment failed"
 fi
